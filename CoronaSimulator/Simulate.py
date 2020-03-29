@@ -246,7 +246,7 @@ class Simulate:
 		try:
 			ax2.text(self.steps*1.02,int (self.noParticles*0.10),r"$R=$"+f"{np.round(R_raw/self.currentlySick,2)}")
 		except:
-			ax2.text(self.steps*1.02,int (self.noParticles*0.10),r"$R=$"+f"NaN")
+			ax2.text(self.steps*1.02,int (self.noParticles*0.10),r"$R=$"+f"0.0")
 		ax2.text((self.steps*1.02), int(self.noParticles*0.03),f"Time: {self.counter}",fontsize = 12)
 		
 		ax2.legend(loc='upper left', bbox_to_anchor=(1, 1))
