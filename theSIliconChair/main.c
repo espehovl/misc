@@ -116,12 +116,12 @@ void gpioSetup(void)
   GPIOINT_Init();
 
   /* Configure buttons as input and transistor base pins as push/pull */
-  GPIO_PinModeSet( gpioPortB, green_btn_in,  gpioModeInput,    0 );
-  GPIO_PinModeSet( gpioPortB, red_btn_in,    gpioModeInput,    0 );
-  GPIO_PinModeSet( gpioPortD, red_sig_out,   gpioModePushPull, 0 );
-  GPIO_PinModeSet( gpioPortD, green_sig_out, gpioModePushPull, 0 );
-  GPIO_PinModeSet( gpioPortD, sensor_in,     gpioModeInput,    0 );
-  GPIO_PinModeSet( gpioPortD, sensor_out,    gpioModePushPull, 0 );
+  GPIO_PinModeSet( gpioPortB, green_btn_in,  gpioModeInputPull, 0 );
+  GPIO_PinModeSet( gpioPortB, red_btn_in,    gpioModeInputPull, 0 );
+  GPIO_PinModeSet( gpioPortD, red_sig_out,   gpioModePushPull,  0 );
+  GPIO_PinModeSet( gpioPortD, green_sig_out, gpioModePushPull,  0 );
+  GPIO_PinModeSet( gpioPortD, sensor_in,     gpioModeInput,     0 );
+  GPIO_PinModeSet( gpioPortD, sensor_out,    gpioModePushPull,  0 );
 
   /* Register callbacks before setting up and enabling pin interrupt. */
   GPIOINT_CallbackRegister( green_btn_in, gpioCallback );
